@@ -1,17 +1,17 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <VirtualKeyboard />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import VirtualKeyboard from './components/VirtualKeyboard.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    VirtualKeyboard
   }
 }
 </script>
