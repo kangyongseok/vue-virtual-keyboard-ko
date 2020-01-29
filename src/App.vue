@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import VirtualKeyboard from './components/VirtualKeyboard.vue'
+import VirtualKeyboard from './components/VirtualKeyboard'
 
 export default {
   name: 'app',

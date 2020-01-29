@@ -1,0 +1,82 @@
+@import '@/assets/styles/styles.scss';
+
+.keyboard {
+  @include align_items(center);
+  @include flex_direction(column);
+  width: 1400px;
+  height: 380px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -700px;
+  border-radius: 0;
+  z-index: 9999;
+  background: #1A1A1A;
+  padding-top: 30px;
+  
+  .key {
+    display: block;
+    color: $white;
+    text-decoration: none;
+    text-align: center;
+    width: 80px;
+    height: 60px;
+    line-height: 58px;
+    margin: 2.5px;
+    background: #333333;
+    font-size: $xlarge-font-size;
+    border-radius: 4px;
+  }
+
+  .key:active, .keydown {
+    border-radius: 4px;
+    color: $white;
+    background: $main-color;
+    // margin: 7px 5px 3px;
+  }
+
+    ul {
+      @include align_items(center);
+      .delete {width: 130px;}
+      .tab {width: 100px;}
+      .caps {width: 110px;}
+      .enter {width: 160px;}
+      .shift {width: 130px;}
+      .lang {width: 130px;}
+      .space {width: 535px;}
+
+      .active {
+        background: $main-color;
+        color: $white;
+      }
+
+      li {
+        @include center_mid();
+      }
+
+      img {
+        width: 30%;
+        margin-top: 18px;
+      }
+    }
+}
+
+
+
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateY(400px);
+  opacity: 0;
+}
+
+
+
+
+
