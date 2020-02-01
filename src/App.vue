@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <VirtualKeyboard />
+    <VirtualKeyboard v-on:getKeyValue="getKeyValue" />
   </div>
 </template>
 
@@ -12,6 +11,11 @@ export default {
   name: 'app',
   components: {
     VirtualKeyboard
+  },
+  methods: {
+    getKeyValue (value) {
+      console.log(value)
+    }
   }
 }
 </script>

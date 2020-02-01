@@ -1,0 +1,40 @@
+@mixin vendor_prefix($name, $argument) {
+	-webkit-#{$name}: #{$argument};
+  -ms-#{$name}: #{$argument};
+  -moz-#{$name}: #{$argument};
+  -o-#{$name}: #{$argument};
+	#{$name}: #{$argument};
+}
+
+@mixin flex() {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flexbox;
+	display: -o-flex;
+	display: flex;
+}
+
+@mixin center_mid() {
+	@include flex();
+	@include vendor_prefix(justify-content, center);
+	@include vendor_prefix(align-items, center);
+}
+
+@mixin align_items($value) {
+	@include flex();
+	@include vendor_prefix(align-items, $value);
+}
+
+@mixin justify_content($value) {
+  @include flex();
+  @include vendor_prefix(justify-content, $value);
+}
+
+@mixin flex_direction($value) {
+	@include flex();
+	@include vendor_prefix(flex-direction, $value);
+}
+
+@mixin box_sizing($value) {
+	@include vendor_prefix(box-sizing, $value);
+}

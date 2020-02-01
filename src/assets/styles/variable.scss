@@ -1,0 +1,55 @@
+// font
+$font-text: 'Noto Sans KR', sans-serif;
+$light : 300;
+$normal : 400;
+$medium : 500;
+$bold : 700;
+
+$h1-font-size : 36px;
+$h2-font-size : 28px;
+$h3-font-size : 26px;
+$h4-font-size : 20px;
+$h5-font-size : 18px;
+$h6-font-size : 16px;
+
+
+$xlarge-font-size : 18px;
+$large-font-size : 16px;
+$normal-font-size : 14px;
+$small-font-size : 12px;
+
+// motorone color
+$main-color: #5773FF;
+$sub-color-sky: #3ACCE1;
+$sub-color-yellow: #FFDC00;
+
+// commone color
+$black: #333333;
+$white: #ffffff;
+$error-color: #FF6969;
+$background-color: #f7f7fa;
+$border-color: #f4f4f6;
+$footer-color: #2a2e43;
+$dot-active: #454f63;
+$dot-complete: #788492;
+
+$text-gray-01: #565656;
+$text-gray-02: #7e7e7e;
+$text-gray-03: #999999;
+$text-gray-04: #cecece;
+$gray-01: #d7dbe2;
+$gray-02: #dfe1e5;
+$gray-03: #e9ebef;
+
+// color-map
+$color: (
+	motorone_advisor: (
+		main: #5773FF,
+	),
+
+	motoron_dealer: (
+		main: #c71026,
+	),
+);
+
+// $main-color: map-get(map-get($color, $env), main);

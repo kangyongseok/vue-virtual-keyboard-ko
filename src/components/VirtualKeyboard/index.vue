@@ -9,10 +9,10 @@
             class="key"
             v-bind:class="classObject(key[shiftIndex])"
             @click="() => keyEvent(key[shiftIndex])"
-            v-on:click="() => getKeyValue(key)"
+            v-on:click="() => _onClick(key)"
           >
-            <span class="keyInfo" v-if="key[shiftIndex] === 'BackSpace'"><img class="keyInfo" src="../../assets/images/ic_backspace.png" /></span>
-            <span class="keyInfo" v-else-if="key[shiftIndex] === 'space'"> </span>
+            <!-- <span class="keyInfo" v-if="key[shiftIndex] === 'BackSpace'"><img class="keyInfo" src="../../assets/images/ic_backspace.png" /></span> -->
+            <span class="keyInfo" v-if="key[shiftIndex] === 'space'"> </span>
             <span class="keyInfo" v-else>{{ key[shiftIndex] }}</span>
           </li>
         </ul>
@@ -22,7 +22,8 @@
 </template>
 
 <script>
-import KeyData from './KeyData'
+import KeyData from './keyData'
+import Hangul from 'hangul-js'
 
 export default {
   props: {
@@ -33,12 +34,14 @@ export default {
       KeyData,
       shiftIndex: 0,
       capsLock: 0,
-      lang: 'kr'
+      lang: 'kr',
+      keyArr: [],
+      keyValue: null
     }
   },
   methods: {
-    getKeyValue (value) {
-      this.$emit('getKeyValue', value[this.shiftIndex])
+    _onClick (value) {
+      this.$emit('getKeyValue', this.keyValue)
     },
     classObject (key) {
       switch (key) {
@@ -64,21 +67,34 @@ export default {
           return { none: false }
       }
     },
-    keyEvent (key) {
-      if (key === 'Shift' || key === 'CapsLock') {
-        if (this.shiftIndex === 1) {
-          this.shiftIndex = 0
-        } else {
-          this.shiftIndex = 1
-        }
+    async keyEvent (key) {
+      switch (key) {
+        case 'Shift':
+        case 'CapsLock':
+          if (this.shiftIndex === 1) {
+            this.shiftIndex = 0
+          } else {
+            this.shiftIndex = 1
+          }
+          break
+        case '한/영':
+          if (this.lang === 'kr') {
+            this.lang = 'en'
+          } else {
+            this.lang = 'kr'
+          }
+          break
+        case 'BackSpace':
+          this.delete()
+          break
+        default:
+          await this.keyArr.push(key)
+          this.keyValue = await Hangul.assemble(this.keyArr)
+          break
       }
-      if (key === '한/영') {
-        if (this.lang === 'kr') {
-          this.lang = 'en'
-        } else {
-          this.lang = 'kr'
-        }
-      }
+    },
+    delete () {
+      console.log('delete')
     }
   }
 }
