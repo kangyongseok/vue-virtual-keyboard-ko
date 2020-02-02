@@ -100,5 +100,89 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import './VirtualKeyboard.scss';
+  /* @import './VirtualKeyboard.scss'; */
+  @mixin vendor_prefix($name, $argument) {
+    -webkit-#{$name}: #{$argument};
+    -ms-#{$name}: #{$argument};
+    -moz-#{$name}: #{$argument};
+    -o-#{$name}: #{$argument};
+    #{$name}: #{$argument};
+  }
+  @mixin flex() {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: -o-flex;
+    display: flex;
+  }
+  @mixin align_items($value) {
+    @include flex();
+    @include vendor_prefix(align-items, $value);
+  }
+  @mixin flex_direction($value) {
+    @include flex();
+    @include vendor_prefix(flex-direction, $value);
+  }
+  .keyboard {
+    @include align_items(center);
+    @include flex_direction(column);
+    width: 1400px;
+    height: 380px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -700px;
+    border-radius: 0;
+    z-index: 9999;
+    background: #1A1A1A;
+    padding-top: 30px;
+    .key {
+      display: block;
+      color: #ffffff;
+      text-decoration: none;
+      text-align: center;
+      width: 80px;
+      height: 60px;
+      line-height: 58px;
+      margin: 2.5px;
+      background: #333333;
+      font-size: 18px;
+      border-radius: 4px;
+    }
+
+    .key:active, .keydown {
+      border-radius: 4px;
+      color: #ffffff;
+      background: red;
+      // margin: 7px 5px 3px;
+    }
+
+    ul {
+      @include align_items(center);
+      margin: 0;
+      padding: 0;
+      .delete {width: 130px;}
+      .tab {width: 100px;}
+      .caps {width: 110px;}
+      .enter {width: 160px;}
+      .shift {width: 130px;}
+      .lang {width: 130px;}
+      .space {width: 535px;}
+
+      .active {
+        background: red;
+        color: #ffffff;
+      }
+
+      li {
+        @include flex();
+        @include vendor_prefix(justify-content, center);
+        @include vendor_prefix(align-items, center);
+      }
+      img {
+        width: 30%;
+        margin-top: 18px;
+      }
+    }
+  }
 </style>
