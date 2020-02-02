@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+    <input
+      :value="value"
+    />
     <VirtualKeyboard v-on:getKeyValue="getKeyValue" />
   </div>
 </template>
@@ -12,9 +15,15 @@ export default {
   components: {
     VirtualKeyboard
   },
+  data () {
+    return {
+      value: null,
+      keyboard: false
+    }
+  },
   methods: {
     getKeyValue (value) {
-      console.log(value)
+      this.value = value
     }
   }
 }

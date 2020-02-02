@@ -37,6 +37,8 @@
 
     ul {
       @include align_items(center);
+      margin: 0;
+      padding: 0;
       .delete {width: 130px;}
       .tab {width: 100px;}
       .caps {width: 110px;}

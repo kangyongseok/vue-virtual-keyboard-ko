@@ -3,6 +3,8 @@
   "version": "0.1.1",
   "private": false,
   "main": "dist/ash.common.js",
+  "author": "YongSuek Kang",
+  "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name ash src/index.js",

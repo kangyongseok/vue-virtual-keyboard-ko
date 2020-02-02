@@ -9,7 +9,6 @@
             class="key"
             v-bind:class="classObject(key[shiftIndex])"
             @click="() => keyEvent(key[shiftIndex])"
-            v-on:click="() => _onClick(key)"
           >
             <!-- <span class="keyInfo" v-if="key[shiftIndex] === 'BackSpace'"><img class="keyInfo" src="../../assets/images/ic_backspace.png" /></span> -->
             <span class="keyInfo" v-if="key[shiftIndex] === 'space'"> </span>
@@ -40,9 +39,6 @@ export default {
     }
   },
   methods: {
-    _onClick (value) {
-      this.$emit('getKeyValue', this.keyValue)
-    },
     classObject (key) {
       switch (key) {
         case 'BackSpace':
@@ -90,11 +86,14 @@ export default {
         default:
           await this.keyArr.push(key)
           this.keyValue = await Hangul.assemble(this.keyArr)
+          await this.$emit('getKeyValue', this.keyValue)
           break
       }
     },
-    delete () {
-      console.log('delete')
+    async delete () {
+      await this.keyArr.pop()
+      this.keyValue = await Hangul.assemble(this.keyArr)
+      await this.$emit('getKeyValue', this.keyValue)
     }
   }
 }
