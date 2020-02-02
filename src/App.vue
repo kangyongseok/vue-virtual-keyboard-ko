@@ -17,8 +17,7 @@ export default {
   },
   data () {
     return {
-      value: null,
-      keyboard: false
+      value: null
     }
   },
   methods: {

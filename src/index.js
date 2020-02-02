@@ -1,4 +1,4 @@
-import VirtualKeyboard from './components/VirtualKeyboard.vue'
+import VirtualKeyboard from './components/VirtualKeyboard'
 
 const install = (Vue) => {
   Vue.component(VirtualKeyboard)
