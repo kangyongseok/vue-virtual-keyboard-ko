@@ -2,7 +2,7 @@
 
 This is a simple Hangul virtual keyboard.
 
-![image](/vue-virtual-keyboard-ko/src/assets/images/screenshot.png)
+![image](https://github.com/kangyongseok/vue-virtual-keyboard-ko/blob/master/src/assets/images/screenshot.png)
   
 ## Install
 ``` console
