@@ -5,6 +5,14 @@
   "main": "dist/ash.common.js",
   "author": "YongSuek Kang",
   "license": "MIT",
+  "keywords": [
+    "vue",
+    "vuejs",
+    "virtual",
+    "keyboard",
+    "simple",
+    "korean"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kangyongseok/vue-virtual-keyboard-ko"

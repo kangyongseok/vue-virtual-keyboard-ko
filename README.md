@@ -1,24 +1,45 @@
 # vue-virtual-keyboard-ko
 
-## Project setup
-```
-npm install
+This is a simple Hangul virtual keyboard.
+
+## Install
+``` console
+$ npm i --save vue-virtual-keyboard-ko
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
+## Usage
+``` javascript
+<template>
+  <div id="app">
+    {{ value }}
+    <VirtualKeyboard 
+      v-on:getKeyValue="_getKeyValue"
+    />
+  </div>
+</template>
+
+<script>
+import { VirtualKeyboard } from 'vue-virtual-keyboard-ko'
+
+export default {
+  name: 'app',
+  components: {
+    VirtualKeyboard
+  },
+  data () {
+    return {
+      value: ''
+    }
+  },
+  methods: {
+    _getKeyValue (value) {
+      this.value = value
+    }
+  }
+}
+</script>
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+Currently only prop returning a value, but the theme change special key addition will be updated later.
 
-### Lints and fixes files
-```
-npm run lint
-```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
