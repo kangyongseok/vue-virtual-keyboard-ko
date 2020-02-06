@@ -3,13 +3,13 @@
     <input
       :value="value"
     />
-    <VirtualKeyboard v-on:getKeyValue="getKeyValue" />
+    <VirtualKeyboard v-on:getKeyValue="getKeyValue" theme="white-shadow" />
   </div>
 </template>
 
 <script>
 import VirtualKeyboard from './components/VirtualKeyboard'
-
+// theme (white, white-shadow)
 export default {
   name: 'app',
   components: {

@@ -16,6 +16,7 @@ $ npm i --save vue-virtual-keyboard-ko
     {{ value }}
     <VirtualKeyboard 
       v-on:getKeyValue="_getKeyValue"
+      theme="white-shadow"
     />
   </div>
 </template>
@@ -44,4 +45,10 @@ export default {
 
 Currently only prop returning a value, but the theme change special key addition will be updated later.
 
+## Theme
 
+> v.0.2.0 Add theme
+- white
+![white](https://github.com/kangyongseok/vue-virtual-keyboard-ko/blob/master/src/assets/images/white_keyboard.png)
+- white-shadow
+![white-shadow](https://github.com/kangyongseok/vue-virtual-keyboard-ko/blob/master/src/assets/images/white-shadow_keyboard.png)

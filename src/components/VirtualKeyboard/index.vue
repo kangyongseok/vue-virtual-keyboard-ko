@@ -1,6 +1,6 @@
 <template>
   <transition name="slide-fade">
-    <div class="keyboard">
+    <div class="keyboard" :class="theme">
       <div v-for="(keyLine, index) in KeyData[lang]" :key="index">
         <ul>
           <li
@@ -26,7 +26,8 @@ import Hangul from 'hangul-js'
 
 export default {
   props: {
-    valueArr: Array
+    valueArr: Array,
+    theme: String
   },
   data () {
     return {
