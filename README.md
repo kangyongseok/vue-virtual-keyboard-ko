@@ -2,7 +2,7 @@
 
 This is a simple Hangul virtual keyboard.
 
-![image](https://github.com/kangyongseok/vue-virtual-keyboard-ko/blob/master/src/assets/images/screenshot.png)
+![image](https://raw.githubusercontent.com/kangyongseok/vue-virtual-keyboard-ko/master/src/assets/images/screenshot.png)
   
 ## Install
 ``` console
@@ -49,6 +49,6 @@ Currently only prop returning a value, but the theme change special key addition
 
 > v.0.2.0 Add theme
 - white
-![white](https://github.com/kangyongseok/vue-virtual-keyboard-ko/blob/master/src/assets/images/white_keyboard.png)
+![white](https://raw.githubusercontent.com/kangyongseok/vue-virtual-keyboard-ko/master/src/assets/images/white_keyboard.png)
 - white-shadow
-![white-shadow](https://github.com/kangyongseok/vue-virtual-keyboard-ko/blob/master/src/assets/images/white-shadow_keyboard.png)
+![white-shadow](https://raw.githubusercontent.com/kangyongseok/vue-virtual-keyboard-ko/master/src/assets/images/white-shadow_keyboard.png)
